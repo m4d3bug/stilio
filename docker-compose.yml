@@ -33,7 +33,7 @@ services:
       - postgres
       - crawler
     ports:
-      - "80:8000"
+      - "8000:8000"
     logging:
       driver: "json-file"
       options:

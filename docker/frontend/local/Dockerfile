@@ -10,12 +10,8 @@ COPY . ${ROOT}
 RUN apt-get update \
     && apt-get install -y build-essential
 
-RUN pip install pipenv
-COPY Pipfile .
-COPY Pipfile.lock .
-RUN pipenv install --system --dev
-RUN rm -rf /Pipfile \
-    && rm -rf /Pipfile.lock
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 RUN apt-get remove -y build-essential \
     && apt-get -y autoremove

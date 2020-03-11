@@ -14,12 +14,8 @@ RUN apt-get update \
     # psycopg2 dependencies
     && apt-get install -y gcc python3-dev musl-dev
 
-RUN pip install pipenv
-COPY Pipfile .
-COPY Pipfile.lock .
-RUN pipenv install --system
-RUN rm -rf /Pipfile \
-    && rm -rf /Pipfile.lock
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 RUN apt-get remove -y build-essential \
     && apt-get -y autoremove

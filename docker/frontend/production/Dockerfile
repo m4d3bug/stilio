@@ -10,15 +10,11 @@ COPY stilio/__init__.py stilio/__init__.py
 COPY stilio/frontend stilio/frontend
 COPY stilio/persistence stilio/persistence
 
-RUN apt-get update \
+RUN apt-get -o update \
     && apt-get install -y build-essential
 
-RUN pip install pipenv
-COPY Pipfile .
-COPY Pipfile.lock .
-RUN pipenv install --system
-RUN rm -rf /Pipfile \
-    && rm -rf /Pipfile.lock
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 RUN apt-get remove -y build-essential \
     && apt-get -y autoremove

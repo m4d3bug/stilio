@@ -1,0 +1,17 @@
+better-bencode 
+gunicorn
+fastapi 
+uvicorn 
+jinja2 
+aiofiles 
+peewee 
+peewee-async 
+aiopg 
+psycopg2-binary 
+black 
+mypy 
+coverage 
+pytest 
+sphinx 
+sphinx-rtd-theme 
+faker 
