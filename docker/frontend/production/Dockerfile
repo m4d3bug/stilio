@@ -10,7 +10,7 @@ COPY stilio/__init__.py stilio/__init__.py
 COPY stilio/frontend stilio/frontend
 COPY stilio/persistence stilio/persistence
 
-RUN apt-get -o update \
+RUN apt-get update \
     && apt-get install -y build-essential
 
 COPY requirements.txt requirements.txt
