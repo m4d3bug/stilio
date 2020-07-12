@@ -30,6 +30,12 @@ Goals
 Quickstart
 ~~~~~~~~~~
 
+Setup env first in env-example. Then rename to .env
+
+::
+
+    mv env-example .env
+
 A `docker-compose </docker-compose.yml>`_ file is included to allow a fast and easy set up.
 
 ::
